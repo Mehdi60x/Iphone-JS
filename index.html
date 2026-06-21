@@ -1,45 +1,166 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-    <title>Apple</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone — La révolution continue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
-    <section class="global">
-        <header>
-            <a href="#" class="logo"><img src="Assets/img/logo.png" alt=""></a>
-        <ul>
-            <li> <a href="#">Home</a></li>
-            <li><a href="#">Produits</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        </header>
-        <div class="content">
-            <div class="box">
-                <h2>La Révolution iPhone. <span>Du génie !</span></h2>
-                <p>Vous méritez le meilleur, et l'iPhone est bien plus qu'un simple smartphone. C'est une expérience.
-                   Avec son design épuré, sa performance inégalée et son écosystème parfaitement intégré,
-                   l'iPhone transforme chaque instant en un moment d'exception. Que vous soyez passionné de photographie, amateur de jeux vidéo ou simplement à la recherche d'une technologie fiable et sécurisée,
-                   l'iPhone est fait pour vous. <br><br>
-                   Ne manquez pas l'opportunité de redéfinir votre quotidien avec l'iPhone, un chef-d'œuvre de technologie qui allie style, puissance et simplicité.
-                   Rejoignez la révolution aujourd'hui!</p><br>
-                   <a href="#">Voir le produits</a>
-            </div>
-            <div class="box-img">
-                <img class="phone" src="Assets/Iphone-03.png" alt="">
-            </div>
-        </div>
-        <h3>Choisissez votre modèle</h3>
-        <ul class="cont-imgs">
-            <li><img src="Assets/Iphone-01.png" alt="phone" onclick="slider('./Assets/Iphone-01.png'); couleur('#9d9d9d')"></li>
-            <li><img src="Assets/Iphone-02.png" alt="phone" onclick="slider('./Assets/Iphone-02.png'); couleur('#eef1d5')"></li>
-            <li><img src="Assets/Iphone-03.png" alt="phone" onclick="slider('./Assets/Iphone-03.png'); couleur('#e8e8e8')"></li>
-        </ul>
-    </section>
-    <script src="index.js"></script>
+    <div class="loader" id="loader">
+        <img src="Assets/logo.png" alt="" class="loader-logo">
+    </div>
 
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <header class="navbar" id="navbar">
+        <a href="#home" class="logo" aria-label="Accueil"><span class="logo-mark"></span></a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Accueil</a>
+            <a href="#models">Modèles</a>
+            <a href="#features">Atouts</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="burger" id="burger" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-bg" id="heroBg">
+                <span class="blob blob-1"></span>
+                <span class="blob blob-2"></span>
+                <span class="blob blob-3"></span>
+                <div class="grid-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text" data-reveal>
+                    <span class="eyebrow">Nouveau · Génération 17</span>
+                    <h1>La Révolution iPhone.<br><span class="accent">Du génie.</span></h1>
+                    <p>Vous méritez le meilleur, et l'iPhone est bien plus qu'un simple smartphone : c'est une
+                       expérience. Design épuré, performance inégalée et écosystème parfaitement intégré —
+                       chaque instant devient un moment d'exception.</p>
+                    <div class="hero-cta">
+                        <a href="#models" class="btn btn-primary magnetic">Voir les modèles</a>
+                        <a href="#features" class="btn btn-ghost magnetic">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" data-reveal>
+                    <div class="phone-stage" id="phoneStage">
+                        <div class="phone-glow"></div>
+                        <img class="phone" id="phoneImg" src="Assets/Iphone-03.png" alt="iPhone">
+                    </div>
+                </div>
+            </div>
+
+            <div class="models" id="models">
+                <p class="models-label">Choisissez votre coloris</p>
+                <ul class="model-switcher">
+                    <li class="model" data-img="Assets/Iphone-01.png" data-color="#150d1f" data-name="Violet Foncé" data-theme="dark">
+                        <img src="Assets/Iphone-01.png" alt="iPhone Violet Foncé">
+                    </li>
+                    <li class="model" data-img="Assets/Iphone-02.png" data-color="#f1e6cf" data-name="Or">
+                        <img src="Assets/Iphone-02.png" alt="iPhone Or">
+                    </li>
+                    <li class="model active" data-img="Assets/Iphone-03.png" data-color="#e8e8e8" data-name="Argent">
+                        <img src="Assets/Iphone-03.png" alt="iPhone Argent">
+                    </li>
+                </ul>
+                <span class="color-name" id="colorName">Argent</span>
+            </div>
+
+            <a href="#features" class="scroll-hint magnetic"><span></span>Scroll</a>
+        </section>
+
+        <section class="features" id="features">
+            <span class="section-tag" data-reveal>Pourquoi l'iPhone</span>
+            <h2 data-reveal>Pensé dans les moindres détails</h2>
+
+            <div class="feature-grid">
+                <article class="feature-card" data-reveal>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+                    </div>
+                    <h3>Puce A17 Pro</h3>
+                    <p>Une puissance bluffante pour le gaming, le montage vidéo et l'intelligence artificielle embarquée.</p>
+                </article>
+
+                <article class="feature-card" data-reveal>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M3 8l1.5-3h15L21 8M3 8v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"/></svg>
+                    </div>
+                    <h3>Caméra Pro 48MP</h3>
+                    <p>Capturez des photos et vidéos d'un réalisme saisissant, même dans l'obscurité la plus totale.</p>
+                </article>
+
+                <article class="feature-card" data-reveal>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="3"/><rect x="10" y="5" width="4" height="3" fill="currentColor" stroke="none"/></svg>
+                    </div>
+                    <h3>Batterie longue durée</h3>
+                    <p>Jusqu'à 20 heures d'autonomie et une recharge rapide pour ne jamais être à court d'énergie.</p>
+                </article>
+
+                <article class="feature-card" data-reveal>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V6l8-4z"/></svg>
+                    </div>
+                    <h3>Sécurité avancée</h3>
+                    <p>Face ID, chiffrement de bout en bout et confidentialité au cœur de chaque interaction.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat" data-reveal>
+                <span class="stat-number" data-count="48">0</span><span class="stat-suffix">MP</span>
+                <p>Caméra principale</p>
+            </div>
+            <div class="stat" data-reveal>
+                <span class="stat-number" data-count="20">0</span><span class="stat-suffix">h</span>
+                <p>Autonomie vidéo</p>
+            </div>
+            <div class="stat" data-reveal>
+                <span class="stat-number" data-count="5">0</span><span class="stat-suffix">G</span>
+                <p>Connectivité ultra rapide</p>
+            </div>
+            <div class="stat" data-reveal>
+                <span class="stat-number" data-count="17">0</span><span class="stat-suffix">Pro</span>
+                <p>Puce A17</p>
+            </div>
+        </section>
+
+        <section class="cta-banner" id="contact">
+            <div class="cta-bg"></div>
+            <h2 data-reveal>Prêt à redéfinir votre quotidien ?</h2>
+            <p data-reveal>Rejoignez la révolution aujourd'hui et découvrez un chef-d'œuvre de technologie qui allie style, puissance et simplicité.</p>
+            <a href="#models" class="btn btn-primary magnetic" data-reveal>Voir les produits</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <a href="#home" class="logo" aria-label="Accueil"><span class="logo-mark"></span></a>
+            <nav>
+                <a href="#home">Accueil</a>
+                <a href="#models">Modèles</a>
+                <a href="#features">Atouts</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <p>&copy; 2026 — Projet pédagogique réalisé avec passion.</p>
+    </footer>
+
+    <script src="index.js?v=2"></script>
 </body>
 </html>
