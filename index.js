@@ -55,7 +55,7 @@ document.querySelectorAll(".magnetic").forEach((el) => {
 ========================================================= */
 const logos = document.querySelectorAll(".logo");
 const logoPalette = ["#0071e3", "#34c759", "#ff9f0a", "#ff375f", "#af52de", "#5e5ce6"];
-let logoIndex = 0;
+let logoIndex = 3; // starts on pink, matching the default Violet Foncé look
 
 function cycleLogoColor() {
     logoIndex = (logoIndex + 1) % logoPalette.length;

@@ -11,7 +11,7 @@
     --radius: 26px;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --transition-bg: background-color 0.7s var(--ease), background 0.7s var(--ease);
-    --logo-color: var(--accent);
+    --logo-color: #ff375f;
 }
 
 * {

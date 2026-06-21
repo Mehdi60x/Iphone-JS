@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
     <div class="cursor" id="cursor"></div>
     <div class="cursor-dot" id="cursorDot"></div>
 
-    <header class="navbar" id="navbar">
+    <header class="navbar navbar--dark" id="navbar">
         <a href="#home" class="logo" aria-label="Accueil"><span class="logo-mark"></span></a>
 
         <nav class="nav-links" id="navLinks">
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <section class="hero" id="home">
+        <section class="hero hero--dark" id="home" style="background:#150d1f">
             <div class="hero-bg" id="heroBg">
                 <span class="blob blob-1"></span>
                 <span class="blob blob-2"></span>
@@ -58,7 +58,7 @@
                 <div class="hero-visual" data-reveal>
                     <div class="phone-stage" id="phoneStage">
                         <div class="phone-glow"></div>
-                        <img class="phone" id="phoneImg" src="Assets/Iphone-03.png" alt="iPhone">
+                        <img class="phone" id="phoneImg" src="Assets/Iphone-01.png" alt="iPhone">
                     </div>
                 </div>
             </div>
@@ -66,17 +66,17 @@
             <div class="models" id="models">
                 <p class="models-label">Choisissez votre coloris</p>
                 <ul class="model-switcher">
-                    <li class="model" data-img="Assets/Iphone-01.png" data-color="#150d1f" data-name="Violet Foncé" data-theme="dark">
+                    <li class="model active" data-img="Assets/Iphone-01.png" data-color="#150d1f" data-name="Violet Foncé" data-theme="dark">
                         <img src="Assets/Iphone-01.png" alt="iPhone Violet Foncé">
                     </li>
                     <li class="model" data-img="Assets/Iphone-02.png" data-color="#f1e6cf" data-name="Or">
                         <img src="Assets/Iphone-02.png" alt="iPhone Or">
                     </li>
-                    <li class="model active" data-img="Assets/Iphone-03.png" data-color="#e8e8e8" data-name="Argent">
+                    <li class="model" data-img="Assets/Iphone-03.png" data-color="#e8e8e8" data-name="Argent">
                         <img src="Assets/Iphone-03.png" alt="iPhone Argent">
                     </li>
                 </ul>
-                <span class="color-name" id="colorName">Argent</span>
+                <span class="color-name" id="colorName">Violet Foncé</span>
             </div>
 
             <a href="#features" class="scroll-hint magnetic"><span></span>Scroll</a>
@@ -161,6 +161,6 @@
         <p>&copy; 2026 — Projet pédagogique réalisé avec passion.</p>
     </footer>
 
-    <script src="index.js?v=2"></script>
+    <script src="index.js?v=3"></script>
 </body>
 </html>
